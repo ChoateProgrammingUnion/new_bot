@@ -1,8 +1,7 @@
 const { Client, ActivityType } = require("discord.js")
 const chalk = require("chalk")
-const { LoadCommands } = require("../../handlers/commands");
+const { LoadCommands } = require("../../Handlers/commands");
 const { default: mongoose } = require("mongoose");
-const cfg = require("../../Storage/config.json");
 
 module.exports = {
     name: "ready",

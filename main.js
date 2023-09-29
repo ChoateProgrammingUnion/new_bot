@@ -18,7 +18,7 @@ const client = new Client({
     ],
 });
 
-const cfg = require("./storage/config.json");
+client.config = require('./Storage/config.json');
 client.storage = require("./storage/clientStorage.json");
 
 client.events = new Collection();

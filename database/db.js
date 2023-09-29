@@ -2,7 +2,7 @@ const colors = require('colors');
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-const config = require('../storage/config.json');
+const config = require('../Storage/config.json');
 
 // Check schema folder and user.js
 async function openDatabase() {
