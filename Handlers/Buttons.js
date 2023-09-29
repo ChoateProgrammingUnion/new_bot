@@ -2,6 +2,7 @@ const { resolve } = require("path");
 const { readdir } = require("fs").promises;
 const { EmbedBuilder } = require("discord.js");
 const chalk = require("chalk");
+
 module.exports = (client) => {
     async function getFiles(dir) {
         const dirents = await readdir(dir, { withFileTypes: true });

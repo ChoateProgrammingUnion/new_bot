@@ -1,4 +1,4 @@
-const { loadFiles } = require("../Functions/FileLoader");
+const { loadFiles } = require("../functions/fileLoader");
 const ascii = require("ascii-table"); 
 const chalk = require("chalk");
 

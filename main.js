@@ -1,5 +1,5 @@
 const { Partials, Client, GatewayIntentBits, Collection, ClientPresence, EmbedBuilder, Colors, ButtonInteraction } = require("discord.js");
-const { LoadEvents } = require("./Handlers/events");
+const { LoadEvents } = require("./handlers/events");
 
 const client = new Client({
     intents: [
@@ -18,15 +18,15 @@ const client = new Client({
     ],
 });
 
-client.config = require("./Storage/config.json")
-client.storage = require("./Storage/ClientStorage.json");
+const cfg = require("./storage/config.json");
+client.storage = require("./storage/clientStorage.json");
 
 client.events = new Collection();
 client.commands = new Collection();
 client.Buttons = new Collection();
 
 LoadEvents(client);
-require("./Handlers/Buttons")(client);
+require("./handlers/buttons")(client);
 
 module.exports = { client };
 
