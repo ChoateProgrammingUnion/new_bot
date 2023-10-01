@@ -21,7 +21,7 @@ module.exports = {
         console.log(user)
         console.log(name)
 
-        const guild = client.guilds.cache.get("426702004606337034");
+        const guild = client.guilds.cache.get("889411465491124304");
         console.log(guild)
 
         const guildMember = guild.members.cache.get(interaction.user.id);

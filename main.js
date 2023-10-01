@@ -1,5 +1,6 @@
 const { Partials, Client, GatewayIntentBits, Collection, ClientPresence, EmbedBuilder, Colors, ButtonInteraction } = require("discord.js");
 const { LoadEvents } = require("./handlers/events");
+const { dmJoin } = require("./events/DirMessages/nick");
 
 const client = new Client({
     intents: [
@@ -31,6 +32,8 @@ require("./handlers/buttons")(client);
 module.exports = { client };
 
 const buttonHandlers = {};
+
+dmJoin(client);
 
 global.handleButton = (id, cb) => {
     buttonHandlers[id] = cb;
