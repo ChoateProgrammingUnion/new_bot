@@ -15,6 +15,7 @@ module.exports = {
      * @param {Client} client 
      */
     async execute(interaction, client) {
+
         const user = interaction.user.id
         const name = interaction.options.getString('name')
         console.log(user)
@@ -23,9 +24,21 @@ module.exports = {
         const guild = client.guilds.cache.get("426702004606337034");
         console.log(guild)
 
-        // FIX: TypeError: user.setNickname is not a function
-        guild.members.cache.get(interaction.user.id).setNickname(name).catch(err => console.log("Something went wrong setting your name!"))
+        const guildMember = guild.members.cache.get(interaction.user.id);
 
-        interaction.reply("Success")
+        if (guildMember) {
+
+            const addedNickname = await guildMember.setNickname(name);
+
+            if (addedNickname) {
+                interaction.reply("Success");
+            } else {
+                console.log("Failed to add nickname.");
+            }
+
+        } else {
+            console.log("User is not a member of this guild.");
+        }
+
     }
 }
